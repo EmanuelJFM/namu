@@ -13,6 +13,6 @@ export class LoginComponent {
   }
 
   goToApp(){
-    this.router.navigateByUrl('/create-reservation')
+    this.router.navigateByUrl('/layout')
   }
 }

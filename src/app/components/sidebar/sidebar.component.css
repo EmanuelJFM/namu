@@ -14,7 +14,13 @@
 	-webkit-box-shadow: 9px 0px 5px -6px rgba(0,0,0,0.46);
 	-moz-box-shadow: 9px 0px 5px -6px rgba(0,0,0,0.46);
 	box-shadow: 9px 0px 5px -6px rgba(0,0,0,0.46);
+	width: 225px;
 }
+.not-show{
+	left: -500px !important;
+	position: relative;
+}
+
 
 hr{
 	border: 1px solid transparent; 
@@ -151,6 +157,7 @@ a{
 	text-decoration: none;
 	border-style: none;
 	text-align: center;
+	cursor: pointer;
 }
 /* CAJA VISTA */
 

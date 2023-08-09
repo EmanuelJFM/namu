@@ -4,6 +4,9 @@ import { HomeComponent } from './view/home/home.component';
 import { LoginComponent } from './view/login/login.component';
 import { MyReservationComponent } from './view/my-reservation/my-reservation.component';
 import { CreateReservationComponent } from './view/create-reservation/create-reservation.component';
+import { LayoutComponent } from './view/layout/layout.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 const routes: Routes = [
   {
@@ -15,8 +18,31 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'create-reservation',
-    component: CreateReservationComponent
+    path:'layout',
+    component: LayoutComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'create-reservation',
+        pathMatch: 'full'
+      },
+      {
+        path:'header',
+        component: HeaderComponent
+      },
+      {
+        path:'sidebar',
+        component: SidebarComponent
+      },
+      {
+        path:'create-reservation',
+        component: CreateReservationComponent
+      },
+      {
+        path: 'my-reservation',
+        component: MyReservationComponent
+      }
+    ]
   }
 ];
 

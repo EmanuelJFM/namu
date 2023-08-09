@@ -9,6 +9,8 @@ import { MyReservationComponent } from './view/my-reservation/my-reservation.com
 import { CreateReservationComponent } from './view/create-reservation/create-reservation.component';
 import { CreateAccountComponent } from './view/create-account/create-account.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { HeaderComponent } from './components/header/header.component';
+import { LayoutComponent } from './view/layout/layout.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +19,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     MyReservationComponent,
     CreateReservationComponent,
     CreateAccountComponent,
-    SidebarComponent
+    SidebarComponent,
+    HeaderComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
