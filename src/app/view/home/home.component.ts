@@ -13,4 +13,7 @@ export class HomeComponent {
    goToLogin() {
     this.router.navigateByUrl('/login');
   }
+  openPdf(url: string) {
+    window.open(url, '_blank');
+  }
 }

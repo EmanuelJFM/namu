@@ -29,5 +29,8 @@ export class SidebarComponent{
     this.isOpen = !this.isOpen
   }
 
+  openPdf(url: string) {
+    window.open(url, '_blank');
+  }
 }
 
