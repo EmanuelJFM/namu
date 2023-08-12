@@ -1,1 +1,85 @@
-<p>create-account works!</p>
+<div class="caja">
+    <!-- CAJA RESERVA-->
+    <div class="container-p">
+        <div class="main-buscar-datagrid">
+            <h1 class="text-center">Crear Cuenta</h1>
+            <div class="controls-img img-logo text-center col-sm-12">
+                <img src="/assets/img/logo-fondo-blanco-menu copy.png" alt="">
+            </div>
+
+            <div style="display: flex;flex-direction: column;gap: 0.5rem;">
+
+                <div class="controls-main col-sm-12">
+                    <label for="nombres">Nombres Completos</label>
+                    <div class="controls">
+                        <input type="text" id="nombres" class="form-control" name="nombres">
+                    </div>
+                </div>
+                <div class="controls-main col-sm-12">
+                    <label for="dni">DNI</label>
+                    <div class="controls">
+                        <input type="text" id="dni" class="form-control" name="dni">
+                    </div>
+                </div>
+                <div class="controls-main col-sm-12">
+                    <label for="telefono">Teléfono</label>
+                    <div class="controls">
+                        <input type="tel" id="telefono" class="form-control" name="telefono">
+                    </div>
+                </div>
+
+                <div class="controls-main col-sm-12">
+                    <label for="correo">Correo Electronico</label>
+                    <div class="controls">
+                        <input type="email" id="correo" class="form-control" name="correo">
+                    </div>
+                </div>
+                <div class="controls-main col-sm-12">
+                    <label for="usuario">Usuario</label>
+                    <div class="controls">
+                        <input type="text" id="usuario" class="form-control" name="usuario">
+                    </div>
+                </div>
+                <div class="controls-main col-sm-12">
+                    <label for="contrasena">Contraseña</label>
+                    <div class="controls">
+                        <input type="password" id="contrasena" class="form-control" name="contrasena">
+                    </div>
+                </div>
+                <div class="controls-main col-sm-12">
+                    <label for="confirm-contrasena">Repetir Contraseña</label>
+                    <div class="controls">
+                        <input type="password" id="confirm-contrasena" class="form-control"
+                            name="confirm-contrasena">
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center gap-3 mt-4">
+                <button type="button" class="btn btn-primary" id="btn-registrar">Registrar</button>
+
+                <button type="button" class="btn btn-danger" id="btn-regresar">Regresar</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="modalRegistrar">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header bg-primary text-white">
+                    <h4 class="modal-title">Confirmación</h4>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Registro Exitoso!
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="btn-popup">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>

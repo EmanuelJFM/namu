@@ -7,6 +7,7 @@ import { CreateReservationComponent } from './view/create-reservation/create-res
 import { LayoutComponent } from './view/layout/layout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { CreateAccountComponent } from './view/create-account/create-account.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'crear-cuenta',
+    component: CreateAccountComponent
   },
   {
     path:'layout',

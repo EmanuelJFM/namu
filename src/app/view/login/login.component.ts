@@ -15,4 +15,8 @@ export class LoginComponent {
   goToApp(){
     this.router.navigateByUrl('/layout')
   }
+
+  createAccount(){
+    this.router.navigateByUrl('/crear-cuenta')
+  }
 }
