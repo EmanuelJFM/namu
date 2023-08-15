@@ -10,6 +10,10 @@
     background-color: rgba(236, 239, 239, 0.359)!important;
 }
 
+button{
+	width: 150px;
+}
+
 @media screen and (min-width: 694px) {
     .main-buscar-datagrid{
         grid-template-columns: 0.5fr;

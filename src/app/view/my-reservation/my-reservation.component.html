@@ -4,7 +4,7 @@
         <div class="main-buscar-datagrid">
 
             <h1>Mis Reservas</h1>
-
+            <br>
             <div class="controls-main col-lg-12">
                 <label for="fruit">Fecha:</label>
                 <div class="controls">
@@ -12,12 +12,54 @@
                 </div>
                 <button class="bu-buscar" id="btn-buscar">
                     <span>Buscar</span>
-                    <i class="bx bx-arrow-right"></i>
+                    <i class="bx bx-right-arrow-alt"></i>
                 </button>
             </div>
             <!-- TABLA -->
             <div class="datagrid">
-                
+                <table >
+                    <thead style="background-color:  #6ab04c ;">
+                        <tr>
+                            <th>Ticket</th>
+                            <th>Nombres Completos</th>
+                            <th>Correo</th>
+                            <th>Fecha</th>
+                            <th>Horario</th>
+                            <th>N° Personas</th>
+                            <th>Estado</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:if="${reservas.empty}">
+                        </tr>
+            
+                        <tr th:each="Reserva : ${reservas}">
+                            <td><span th:text="${Reserva.ticket}"> </span></td>
+                            <td><span th:text="${Reserva.consumidor.persona.nombreCompletos}"> </span></td>
+                            <td><span th:text="${Reserva.consumidor.persona.correo}"> </span></td>
+                            <td><span th:text="${Reserva.horarioReserva.fecha}"> </span></td>
+                            <td><span th:text="${Reserva.horarioReserva.horario}"> </span></td>
+                            <td><span th:text="${Reserva.cantidadPersonas}"> </span></td>
+                            <td><span th:text="${Reserva.estadoReserva.nombreEstado}"> </span></td>
+                            <td class="accion">
+                                <div class="text-center editar-reserva" th:if="${Reserva.estadoReserva.idEstadoReserva == 1}">
+                                    <div class="btn-group">
+                                        <button class="btn btn-dark btn-editar-reserva" th:data-id-reserva="${Reserva.idReserva}"><i
+                                                class="bx bxs-edit-alt"></i></button>
+                                    </div>
+                                </div>
+            
+                                <div class="text-center -ver-reserva">
+                                    <div class="btn-group">
+                                        <button class="btn btn-dark btn-ver-reserva" th:data-id-reserva="${Reserva.idReserva}"><i
+                                                class="bx bx-show-alt"></i></button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <!-- The Modal -->
             
@@ -30,7 +72,7 @@
                         <!-- Modal Header -->
                         <div class="modal-header">
                             <h4 class="modal-title">Resumen</h4>
-                            <img src="assets/img/logo-login.png" width="70" height="70" alt="">
+                            <img src="/assets/img/logo-login.png" width="70" height="70" alt="">
                         </div>
                         <!-- Modal Main -->
                         <div class="modal-body">
