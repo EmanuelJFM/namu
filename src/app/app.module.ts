@@ -11,8 +11,18 @@ import { CreateAccountComponent } from './view/create-account/create-account.com
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LayoutComponent } from './view/layout/layout.component';
-import { ModalReservaComponent } from './components/modal-reserva/modal-reserva.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DialogBodyComponent } from './components/dialog-body/dialog-body.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {FormsModule} from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ModalTicketComponent } from './components/modal-ticket/modal-ticket.component';
+import { ModalEditComponent } from './components/modal-edit/modal-edit.component';
+import { ModalSeeComponent } from './components/modal-see/modal-see.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,12 +34,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SidebarComponent,
     HeaderComponent,
     LayoutComponent,
-    ModalReservaComponent
+    DialogBodyComponent,
+    ModalTicketComponent,
+    ModalEditComponent,
+    ModalSeeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
