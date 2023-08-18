@@ -11,6 +11,7 @@ import { CreateAccountComponent } from './view/create-account/create-account.com
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LayoutComponent } from './view/layout/layout.component';
+import { ModalReservaComponent } from './components/modal-reserva/modal-reserva.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { LayoutComponent } from './view/layout/layout.component';
     CreateAccountComponent,
     SidebarComponent,
     HeaderComponent,
-    LayoutComponent
+    LayoutComponent,
+    ModalReservaComponent
   ],
   imports: [
     BrowserModule,
