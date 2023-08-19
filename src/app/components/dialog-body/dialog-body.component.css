@@ -1,19 +1,34 @@
-.btn{
-    margin-top: 20px;
-    margin-left: 70px;
-    width: 100px;
-    margin-right: 0;
+.btn-ver{
+  position: relative;
+  margin-top: 20px;
+  margin-left: 50px;
+  width: 100px;
+  text-align: center;
 }
-.txt-modal{
-    font-size: 30px;
-    color: rgb(43, 42, 42);
+
+.btn-cerrar{
+  position: relative;
+  margin-top: 20px;
+  margin-left: 110px;
+  width: 100px;
+  text-align: center;
 }
-.img-fluid{
-    width: fit-content;
+
+/* Texto del modal */
+.txt-modal {
+  font-size: 30px;
+  color: #2b2a2a;
 }
-mat-dialog-content{
-    background-color: white;
-    border-radius: 5px;
+
+/* Imagen fluida */
+.img-fluid {
+  width: 100%; 
+}
+
+/* Contenido del diálogo */
+mat-dialog-content {
+  background-color: white;
+  border-radius: 5px;
 }
 @keyframes bounceIn {
     0% {

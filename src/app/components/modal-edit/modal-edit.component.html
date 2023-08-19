@@ -1,1 +1,89 @@
-<p>modal-edit works!</p>
+<mat-dialog-content>
+    <div class="modal-header">
+        <h2 class="modal-title">Resumen</h2>
+        <img src="/assets/img/logo-login.png" width="70" height="70" alt="">
+    </div>
+    <div class="modal-body">
+        <form action="">
+            <!--  General -->
+            <div class="form-group">
+                <input type="hidden" id="id-reserva-editar"
+                        th:value="${reserva.idReserva}">
+                <div class="controls-main col-lg-12">
+                    <label for="ticket">Id_Ticket</label>
+                    <div class="controls">
+                        <input type="text" id="ticket" class="form-control" name="ticket" disabled
+                        th:value="${reserva.ticket}">
+                    </div>
+                </div>
+                <div class="controls-main col-lg-12">
+                    <label for="nombres">Nombres Completos</label>
+                    <div class="controls">
+                        <input type="text" id="nombres" class="form-control" name="nombres" disabled
+                        th:value="${reserva.consumidor.persona.nombreCompletos}">
+                    </div>
+                </div>
+                <div class="controls-main col-lg-12">
+                    <label for="telefono">Telefono</label>
+                    <div class="controls">
+                        <input type="tel" id="telefono" class="form-control" name="telefono" disabled
+                        th:value="${reserva.consumidor.persona.telefono}">
+                    </div>
+                </div>
+
+                <div class="controls-main col-lg-12">
+                    <label for="correo">Correo Electronico</label>
+                    <div class="controls">
+                        <input type="email" id="correo" class="form-control" name="correo" disabled
+                        th:value="${reserva.consumidor.persona.correo}">
+                    </div>
+                </div>
+
+                <div class="controls-main col-lg-12">
+                    <label for="fecha-reserva-editar">Fecha de Reserva</label>
+                    <div class="controls">
+                        <input class="input form-control" type="date" id="fecha-reserva-editar"
+                        th:value="${reserva.horarioReserva.fecha}">
+                    </div>
+                </div>
+
+                <div class="controls-main col-lg-12">
+                    <label for="horario">Horario</label>
+                    <div class="controls combo-horarios">
+                        <div th:replace="~{fragments/reservas-combo-horarios :: combo}"></div>
+                    </div>
+                </div>
+
+                <div class="controls-main col-lg-12">
+                    <label for="numero-personas">Cantidad de Personas</label>
+                    <div class="controls">
+                        <input class="input form-control" type="number" id="numero-personas" max="8" min="1"
+                        th:value="${reserva.cantidadPersonas}">
+                    </div>
+                </div>
+
+                <div class="controls-main col-lg-12">
+                    <label class="comentarios">Comentarios Adicionales</label>
+                    <div class="controls">
+                        <textarea name="comentarios" class="form-control" id="comentarios"
+                            placeholder="Ingrese sus comentarios aquí"
+                            th:value="${reserva.comentariosAdicionales}"
+                            th:text="${reserva.comentariosAdicionales}"></textarea>
+                    </div>
+                </div>
+                <div class="controls-main col-lg-12">
+                    <label for="fruit">Estado</label>
+                    <div class="controls">
+                        <input type="text" id="estado" class="form-control" name="estado" disabled
+                        th:value="${reserva.estadoReserva.nombreEstado}">
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn button-editar btn-success">Editar</button>
+        <button matDialogClose type="button" class="btn btn-danger">Cancelar</button>
+    </div>
+</mat-dialog-content>

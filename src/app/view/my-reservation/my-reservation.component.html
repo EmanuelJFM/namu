@@ -45,14 +45,14 @@
                             <td class="accion">
                                 <div class="text-center editar-reserva" th:if="${Reserva.estadoReserva.idEstadoReserva == 1}">
                                     <div class="btn-group">
-                                        <button class="btn btn-dark btn-editar-reserva" th:data-id-reserva="${Reserva.idReserva}"><i
+                                        <button class="btn btn-dark btn-editar-reserva" (click)="openModalEdit()"><i
                                                 class="bx bxs-edit-alt"></i></button>
                                     </div>
                                 </div>
             
                                 <div class="text-center -ver-reserva">
                                     <div class="btn-group">
-                                        <button class="btn btn-dark btn-ver-reserva" th:data-id-reserva="${Reserva.idReserva}"><i
+                                        <button class="btn btn-dark btn-ver-reserva" (click)="openModalSee()"><i
                                                 class="bx bx-show-alt"></i></button>
                                     </div>
                                 </div>
@@ -61,120 +61,6 @@
                     </tbody>
                 </table>
             </div>
-            <!-- The Modal -->
-            
-           
-            <!--Fin Modal Editar -->
-            <!-- Modal Ver -->
-            <div class="modal fade" id="myModalVer">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <!-- Modal Header -->
-                        <div class="modal-header">
-                            <h4 class="modal-title">Resumen</h4>
-                            <img src="/assets/img/logo-login.png" width="70" height="70" alt="">
-                        </div>
-                        <!-- Modal Main -->
-                        <div class="modal-body">
-                            <form action="">
-                                <!--  General -->
-                                <div class="form-group">
-                                    <div class="controls-main col-lg-12">
-                                        <label for="name">Id_Ticket</label>
-                                        <div class="controls">
-                                            <input type="text" id="name" class="form-control" name="name">
-                                        </div>
-                                    </div>
-                                    <div class="controls-main col-lg-12">
-                                        <label for="name">Nombres Completos</label>
-                                        <div class="controls">
-                                            <input type="text" id="name" class="form-control" name="name">
-                                        </div>
-                                    </div>
-                                    <div class="controls-main col-lg-12">
-                                        <label for="phone">Telefono</label>
-                                        <div class="controls">
-                                            <input type="tel" id="phone" class="form-control" name="phone">
-                                        </div>
-                                    </div>
-
-                                    <div class="controls-main col-lg-12">
-                                        <label for="email">Correo Electronico</label>
-                                        <div class="controls">
-                                            <input type="text" id="email" class="form-control" name="email">
-                                        </div>
-                                    </div>
-
-                                    <div class="controls-main col-lg-12">
-                                        <label for="fruit">Fecha de Reserva</label>
-                                        <div class="controls">
-                                            <select class="form-select">
-                                                <option value="blank"></option>
-                                                <option value="28/06/2023">1</option>
-                                                <option value="29/06/2023" selected>29/06/2023</option>
-                                                <option value="30/06/2023">3</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="controls-main col-lg-12">
-                                        <label for="fruit">Horario</label>
-                                        <div class="controls">
-                                            <select class="form-select">
-                                                <option value="blank"></option>
-                                                <option value="1">1</option>
-                                                <option value="2" selected>14:04:06</option>
-                                                <option value="3">3</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="controls-main col-lg-12">
-                                        <label for="fruit">Cantidad de Personas</label>
-                                        <div class="controls">
-                                            <select class="form-select">
-                                                <option value="blank"></option>
-                                                <option value="1">1</option>
-                                                <option value="2" selected>2</option>
-                                                <option value="3">3</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="controls-main col-lg-12">
-                                        <label class="infor-text"><i>Comentarios Adicionales</i></label>
-                                        <div class="controls">
-                                            <textarea name="comments" class="form-control" id="comments"
-                                                placeholder="Ingrese sus comentarios aquí"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="controls-main col-lg-12">
-                                        <label for="fruit">Estado</label>
-                                        <div class="controls">
-                                            <select class="form-select">
-                                                <option value="blank"></option>
-                                                <option value="Pendiente">Pendiente</option>
-                                                <option value="Asistio" selected>Asistio</option>
-                                                <option value="Cancelado">Cancelado</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </form>
-                        </div>
-                        <!-- Modal footer -->
-                        <div class="modal-footer">
-                            <button type="button" class="btn button-descargar btn-success"
-                                data-bs-dismiss="modal">Descargar</button>
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                        </div>
-                        <!--  -->
-                    </div>
-                </div>
-            </div>
-            <!-- Fin modal ver -->
-
         </div>
     </div>
 </div>
