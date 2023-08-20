@@ -1,21 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/http/login.service';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { SessionStorageService } from 'src/app/services/http/session-storage.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
-  constructor(private router: Router) {
+  public loginForm: FormGroup;
 
+  constructor(private router: Router, private loginService: LoginService, private sessionStorageService: SessionStorageService) {
+    this.loginForm = new FormGroup({
+      user: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required)
+    });
+  }
+  ngOnInit(): void {
+    console.log('ngOnInit')
   }
 
-  goToApp(){
-    this.router.navigateByUrl('/layout')
+  doLogin(){
+    //this.router.navigateByUrl('/layout')
+    this.loginService.doLogin(this.loginForm.value).subscribe(userInformation =>{
+      this.sessionStorageService.informationSession(userInformation);
+    });
+    
   }
-
   createAccount(){
     this.router.navigateByUrl('/crear-cuenta')
   }
