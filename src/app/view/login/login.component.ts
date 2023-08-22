@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/http/login.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { SessionStorageService } from 'src/app/services/http/session-storage.service';
+import { SessionStorageService } from 'src/app/services/others/session-storage.service';
+
 
 @Component({
   selector: 'app-login',
@@ -24,11 +25,12 @@ export class LoginComponent implements OnInit {
   }
 
   doLogin(){
-    //this.router.navigateByUrl('/layout')
+
     this.loginService.doLogin(this.loginForm.value).subscribe(userInformation =>{
-      this.sessionStorageService.informationSession(userInformation);
+      this.sessionStorageService.setInformationSession(userInformation);
+      this.router.navigateByUrl('/layout');
     });
-    
+
   }
   createAccount(){
     this.router.navigateByUrl('/crear-cuenta')

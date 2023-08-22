@@ -3,70 +3,65 @@
     <div class="container-p">
         <div class="main-buscar-datagrid">
 
-            <h1>Crear Reserva</h1>
-
-            <input type="hidden" id="id-consumidor">
-
-            <div class="controls-main col-lg-12">
-                <label for="nombres">Nombres Completos</label>
-                <div class="controls">
-                    <input type="text" id="nombres" class="form-control" name="nombres">
+            <form [formGroup]="reservationForm">
+                <div class="controls-main col-lg-12">
+                    <label for="nombres">Nombres Completos</label>
+                    <div class="controls">
+                        <input type="text" class="form-control" id="nombres" readonly formControlName="nombre">
+                    </div>
                 </div>
-            </div>
-            <div class="controls-main col-lg-12">
-                <label for="telefono">Telefono</label>
-                <div class="controls">
-                    <input type="tel" id="telefono" class="form-control" name="telefono">
-                </div>
-            </div>
 
-            <div class="controls-main col-lg-12">
-                <label for="correo">Correo Electronico</label>
-                <div class="controls">
-                    <input type="email" id="correo" class="form-control" name="correo">
+                <div class="controls-main col-lg-12">
+                    <label for="telefono">Telefono</label>
+                    <div class="controls">
+                        <input type="tel" class="form-control" readonly id="telefono" formControlName="phone">
+                    </div>
                 </div>
-            </div>
 
-            <div class="controls-main col-lg-12">
-                <label for="fecha-reserva">Fecha de Reserva</label>
-                <div class="controls">
-                    <input class="input form-control" type="date" id="fecha-reserva">
+                <div class="controls-main col-lg-12">
+                    <label for="correo">Correo Electronico</label>
+                    <div class="controls">
+                        <input type="email" class="form-control" readonly id="correo" formControlName="email">
+                    </div>
                 </div>
-            </div>
 
-            <div class="controls-main col-lg-12">
-                <label for="horario">Horario</label>
-                <div class="controls combo-horarios">
-                    <select class="form-select form-control" id="horario" th:fragment="combo">
-                        <option th:if="${horarios.empty}" value="" disabled selected> No hay Horarios disponibles </option>
-                
-                        <option th:if="${horarios.empty == false}" value="" disabled selected> Seleccione un horario </option>
-                        <option th:each="Horario : ${horarios}" th:value="${Horario.idHorarioReserva}" th:text="${Horario.horario}">
-                        </option>
-                    </select>
+                <div class="controls-main col-lg-12">
+                    <label for="fecha-reserva">Fecha de Reserva</label>
+                    <div class="controls">
+                        <input class="input form-control" type="date" id="fecha-reserva" formControlName="fecha">
+                    </div>
                 </div>
-            </div>
 
-            <div class="controls-main col-lg-12">
-                <label for="numero-personas">Cantidad de Personas</label>
-                <div class="controls">
-                    <input class="input form-control" type="number" id="numero-personas" max="8" min="1">
+                <div class="controls-main col-lg-12">
+                    <label for="horario">Horario</label>
+                    <div class="controls combo-horarios">
+                        <select class="form-select form-control" id="horario" formControlName="horario">
+                            <!-- <option [disabled]="horariosEmpty" [selected]="true">Seleccione un horario</option>
+                            <option *ngFor="let Horario of horarios" [value]="Horario.idHorarioReserva">{{
+                                Horario.horario }}</option> -->
+                        </select>
+                    </div>
                 </div>
-            </div>
 
-            <div class="controls-main col-lg-12">
-                <label class="infor-text" for="comentarios">Comentarios Adicionales</label>
-                <div class="controls">
-                    <textarea name="comentarios" class="form-control" id="comentarios"
-                        placeholder="Ingrese sus comentarios aquí"></textarea>
+                <div class="controls-main col-lg-12">
+                    <label for="numero-personas">Cantidad de Personas</label>
+                    <div class="controls">
+                        <input class="input form-control" type="number" id="numero-personas"
+                            formControlName="cantidad" max="8" min="1">
+                    </div>
                 </div>
-            </div>
-            <br>
-            <div class="d-flex justify-content-between gap-2 mt-2">
-                <button type="button" class="btn btn-warning " id="btn-limpiar">Limpiar</button>
-                <button type="button" class="btn btn-primary" id="btn-enviar" color="primary" (click)="openDialog()">Enviar Reserva</button>
-            </div>
-            
+
+                <div class="controls-main col-lg-12">
+                    <label class="infor-text" for="comentarios">Comentarios Adicionales</label>
+                    <div class="controls">
+                        <textarea class="form-control" id="comentarios" formControlName="coment"
+                            placeholder="Ingrese sus comentarios aquí"></textarea>  
+                    </div>
+                </div>
+                <br>
+                <div class="d-flex justify-content-between gap-2 mt-2">
+                    <button type="button" class="btn btn-warning" (click)="clearForm()">Limpiar</button>
+                    <button type="submit" class="btn btn-primary" (click)="openDialog()">Enviar Reserva</button>
+                </div>
+            </form>
         </div>
-    </div>
-</div>
