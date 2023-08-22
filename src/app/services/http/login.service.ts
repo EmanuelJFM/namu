@@ -13,4 +13,5 @@ export class LoginService {
   doLogin(userData: IUserData) {
     return this.httpService.post<IUserInformation>('http://localhost:3000/api/login', userData);
   }
+  
 }

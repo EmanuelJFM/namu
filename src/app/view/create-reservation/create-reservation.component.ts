@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { __values } from 'tslib';
 import { SessionStorageService } from 'src/app/services/others/session-storage.service';
+import { ScheduleService } from 'src/app/services/http/schedule.service';
 
 @Component({
   selector: 'app-create-reservation',
@@ -14,7 +15,7 @@ export class CreateReservationComponent {
 
   reservationForm: FormGroup;
   title = 'angular-dialog';
-  constructor(private matDialog: MatDialog, private sessionStorageService: SessionStorageService) {
+  constructor(private matDialog: MatDialog, private sessionStorageService: SessionStorageService, private scheduleService: ScheduleService) {
 
     const userInformation = this.sessionStorageService.getInformationSession();
 
@@ -33,9 +34,13 @@ export class CreateReservationComponent {
       const fechaDate = new Date(value);
       const day = fechaDate.getDay();
       this.getDay(day);
-      console.log(this.getDay(day));
-    });
+      const fecha = this.getDay(day);
+      console.log(fecha);
+    })
+    
   }
+
+
 
   getDay(day: number) {
     let fechaReserva;
